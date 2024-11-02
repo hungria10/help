@@ -1,0 +1,2 @@
+# help
+Redirecionamento para WhatsApp
