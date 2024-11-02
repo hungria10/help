@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionando para o WhatsApp...</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function redirectToWhatsApp() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const phoneNumber = urlParams.get('number');
+            if (phoneNumber) {
+                window.location.href = `https://wa.me/${phoneNumber}`;
+            } else {
+                document.getElementById('message').innerText = 'Número de telefone não encontrado na URL.';
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToWhatsApp()">
+    <h1 id="message">Você está sendo redirecionado para o WhatsApp...</h1>
+    <p>Se o redirecionamento não funcionar, verifique o número ou <a href="#" id="link">clique aqui</a>.</p>
+</body>
+</html>
